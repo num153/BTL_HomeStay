@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: rgb(29, 26, 8) ;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../images/bg.png');
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 10px;
+}
+a:hover{
+    color: rgb(212, 255, 0);
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .togglebar{
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    display: none;
+    cursor: pointer;
+}
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* DROPDOWN MENU */
+.toggle-dropdown{
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0px;
+    background-color: rgba(84, 85, 84, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s;
+}
+.toggle-dropdown > ul > li{
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toggle-dropdown.open{
+    height: 240px;
+}
+.togglebar.active {
+    color: rgb(212, 255, 0);
+}
+/* RESPONSIVE DESING */
+@media (max-width:992px){
+    .navbar .links{
+        display: none;
+    }
+    .navbar .togglebar{
+        display: block;
+        padding: 10px;
+    }
+    .toggle-dropdown{
+        display: block;
+    }
+}
