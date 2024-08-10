@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
@@ -9,7 +10,7 @@ body{
     background-color: rgb(29, 26, 8) ;
     background-size: cover;
     background-position: center;
-    background-image: url('../images/bg.png');
+    background-color: beige;
 }
 li {
     list-style: none;
@@ -73,6 +74,61 @@ header{
 }
 .togglebar.active {
     color: rgb(212, 255, 0);
+}
+/* FOOTER */
+footer{
+    background-color: rgb(123, 76, 0);
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer-infor ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.left-infor{
+    text-align: left;
+}
+.right-infor{
+    text-align: right;
+}
+.footer-infor a{
+    padding: 0 10px;
+    position: relative;
+}
+.left-infor ul li, .right-infor ul li{
+    display: inline-table;
+}
+.footer-icon ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 0;
+}
+.footer-icon a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+}
+.footer-icon a i{
+    font-size: 2em;
+}
+.footer-copyright{
+    text-align: center;
+    padding: 10px 20px;
+}
+hr{
+    width:75%;
+    margin:0 auto;
+}
+.footer-copyright small{
+    color: white;
+}
+.footer-copyright span{
+    font-style: italic;
 }
 /* RESPONSIVE DESING */
 @media (max-width:992px){
