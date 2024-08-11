@@ -24,7 +24,7 @@ a{
     display: block;
     padding: 10px;
 }
-a:hover{
+.navbar a:hover{
     color: rgb(212, 255, 0);
 }
 .navbar .links{
@@ -93,13 +93,27 @@ footer{
 }
 .footer-infor a{
     padding: 0 10px;
-    border-right: 1px solid white;
+    position: relative;
 }
-.footer-infor a:last-child{
-    border-right: none;
+.footer-infor a:first-child:before{
+    content: "|";
+    position: absolute;
+    right: 0;
+    color: #FFF;
 }
-.footer-infor a:first-child{
-    padding-right: 5px;
+.footer-infor a:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: white;
+    width:100%;
+    height: 1px;
+    bottom: -1px;
+    transform:  scaleX(0);
+    transition: 0.3s ease-in-out;
+}
+.footer-infor a:hover:after{
+    transform: scaleX(1);
 }
 /* +++++++++++++ */
 .footer-icon ul{
@@ -114,7 +128,7 @@ footer{
     margin: 10px;
 }
 .footer-icon a i{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .footer-copyright{
     text-align: center;
@@ -130,7 +144,7 @@ hr{
 .footer-copyright span{
     font-style: italic;
 }
-/* RESPONSIVE DESING */
+/* RESPONSIVE DESIGN */
 @media (max-width:768px){
     .navbar .links{
         display: none;
@@ -141,6 +155,15 @@ hr{
     }
     .toggle-dropdown{
         display: block;
+    }
+    .footer-icon a i{
+        font-size: 1.05em;
+    }
+    .footer-infor{
+        flex-direction: column;
+    }
+    .left-infor, .right-infor{
+        justify-content: center;
     }
 
 }
