@@ -1,3 +1,6 @@
+:root{
+    --coffee: #7f5539;
+}
 *{
     margin: 0;
     padding: 0;
@@ -21,7 +24,7 @@ a{
     display: block;
     padding: 10px;
 }
-a:hover{
+.navbar a:hover{
     color: rgb(212, 255, 0);
 }
 .navbar .links{
@@ -77,31 +80,42 @@ header{
 }
 /* FOOTER */
 footer{
-    background-color: rgb(123, 76, 0);
+    background-color: var(--coffee);
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    padding:2rem 0;
 }
-.footer-infor ul{
-    list-style: none;
+.footer-infor{
+    justify-content: space-between;
     display: flex;
-    flex-wrap: wrap;
 }
-.left-infor{
-    text-align: left;
-}
-.right-infor{
-    text-align: right;
+.left-infor, .right-infor{
+    display: flex;
 }
 .footer-infor a{
     padding: 0 10px;
     position: relative;
 }
-.left-infor ul li, .right-infor ul li{
-    display: inline-table;
+.footer-infor a:first-child:before{
+    content: "|";
+    position: absolute;
+    right: 0;
+    color: #FFF;
 }
+.footer-infor a:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: white;
+    width:100%;
+    height: 1px;
+    bottom: -1px;
+    transform:  scaleX(0);
+    transition: 0.3s ease-in-out;
+}
+.footer-infor a:hover:after{
+    transform: scaleX(1);
+}
+/* +++++++++++++ */
 .footer-icon ul{
     display: flex;
     justify-content: center;
@@ -114,7 +128,7 @@ footer{
     margin: 10px;
 }
 .footer-icon a i{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .footer-copyright{
     text-align: center;
@@ -130,8 +144,8 @@ hr{
 .footer-copyright span{
     font-style: italic;
 }
-/* RESPONSIVE DESING */
-@media (max-width:992px){
+/* RESPONSIVE DESIGN */
+@media (max-width:768px){
     .navbar .links{
         display: none;
     }
@@ -142,4 +156,14 @@ hr{
     .toggle-dropdown{
         display: block;
     }
+    .footer-icon a i{
+        font-size: 1.05em;
+    }
+    .footer-infor{
+        flex-direction: column;
+    }
+    .left-infor, .right-infor{
+        justify-content: center;
+    }
+
 }
