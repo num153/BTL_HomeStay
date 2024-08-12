@@ -14,7 +14,7 @@ body{
     background-color: rgb(29, 26, 8) ;
     background-size: cover;
     background-position: center;
-    background-color: beige;
+    background-color: #eee;
 }
 li {
     list-style: none;
@@ -79,6 +79,49 @@ header{
 .togglebar.active {
     color: rgb(212, 255, 0);
 }
+/* FEEDBACK REVIEw */
+section.feedback-swiper{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+.feedback-avt{
+    width: 100px;
+    margin: 0 auto;
+}
+.feedback-avt img{
+    width: 100%;
+    border-radius: 50%;
+}
+.feedback-content span{
+    color: #565656;
+    display: block;
+    align-items: center;
+    padding: 10px;
+    text-align: justify;
+}
+.feedback {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+    border-radius: 10px;
+  }
+/* SWIPER REVIEW */
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 /* SLIDER */
 .slider > h5{
     text-align: center;
@@ -102,7 +145,7 @@ header{
 }
 
 .slider .slide-track {
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
     display: flex;
     background-color: white;
     width: calc(250px * 12);
