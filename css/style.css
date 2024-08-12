@@ -1,5 +1,6 @@
 :root{
     --coffee: #7f5539;
+    --top-m: 10px;
 }
 *{
     margin: 0;
@@ -78,11 +79,45 @@ header{
 .togglebar.active {
     color: rgb(212, 255, 0);
 }
+/* SLIDER */
+.slider > h5{
+    text-align: center;
+    padding: 10px;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX( calc(-250px * 6));
+    }
+}
+
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.slider .slide-track {
+    animation: scroll 20s linear infinite;
+    display: flex;
+    background-color: white;
+    width: calc(250px * 12);
+}
+
+.slider .slide-img{
+    width: 250px;
+    height: 100px;
+}
 /* FOOTER */
 footer{
     background-color: var(--coffee);
     width: 100%;
     padding:2rem 0;
+    margin-top: var(--top-m);
 }
 .footer-infor{
     justify-content: space-between;
@@ -92,7 +127,7 @@ footer{
     display: flex;
 }
 .footer-infor a{
-    padding: 0 10px;
+    padding: 0 10px; 
     position: relative;
 }
 .footer-infor a:first-child:before{
