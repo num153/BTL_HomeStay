@@ -1,6 +1,8 @@
 :root{
     --coffee: #7f5539;
-    --top-m: 10px;
+    --line: #cecece;
+    --bg-color: #f4f4f5;
+    --top-m: 30px;
 }
 *{
     margin: 0;
@@ -12,7 +14,11 @@ body{
     background-color: rgb(29, 26, 8) ;
     background-size: cover;
     background-position: center;
-    background-color: #eee;
+    background-color: var(--bg-color);
+}
+.flex{
+    display: flex;
+    justify-content: center;
 }
 li {
     list-style: none;
@@ -77,6 +83,43 @@ header{
 .togglebar.active {
     color: rgb(212, 255, 0);
 }
+.tit2{
+    font-size: 30px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+.tit3{
+    color: #45474B;
+    font-size: 20px;
+    padding: 20px 0px 15px;
+    display: block;
+    text-align: center;
+    border-top: 1px solid var(--line);
+}
+.feedback-upper-container{
+    width: 100%;
+}
+.feedback-upper{
+    width: 70%;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+}
+.feedback-upper p{
+    font-size: 15px;
+}
+.left-f h4, .right-f h4 {
+    font-size: 30px;
+    margin: 0;
+}
+.vertical-line{
+    display: inline-block;
+    width: 1px;
+    height: 82px;
+    margin: 0 45px;
+    background: var(--line);
+}
 /* FEEDBACK REVIEw */
 /* div.swipers{
     background-color: aqua;
@@ -132,10 +175,6 @@ div.text{
     text-align: center;
 }
 /* SLIDER */
-.slider > h5{
-    text-align: center;
-    padding: 10px;
-}
 @keyframes scroll{
     0%{
         transform: translateX(0);
@@ -145,16 +184,8 @@ div.text{
     }
 }
 
-.slider {
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: auto;
-    height: auto;
-}
-
 .slider .slide-track {
-    animation: scroll 30s linear infinite;
+    animation: scroll 30s cubic-bezier(.2,.54,.89,.46) infinite;
     display: flex;
     background-color: white;
     width: calc(250px * 12);
@@ -169,7 +200,6 @@ footer{
     background-color: var(--coffee);
     width: 100%;
     padding:2rem 0;
-    margin-top: var(--top-m);
 }
 .footer-infor{
     justify-content: space-between;
@@ -252,5 +282,5 @@ hr{
     .left-infor, .right-infor{
         justify-content: center;
     }
-
+    
 }
