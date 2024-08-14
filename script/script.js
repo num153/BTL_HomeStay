@@ -6,6 +6,23 @@ window.onload = function(){
         const isOpen = drdw.classList.toggle('open');
         toggleIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     };
+    //Header Slider
+    var slideImg = document.getElementById('bannerImg');
+    var img = new Array(
+      "images/banner1.jpg",
+      "images/banner2.jpg",
+      "images/banner3.jpg"
+    );
+    var i = 0; 
+    function slider(){
+      if(i > img.length -1){
+          i=0;
+      }
+      slideImg.src = img[i];
+      i++;
+      setTimeout(slider(),3000);
+    }
+    // Feedback Swiper
     var swiper = new Swiper(".feedback-content", {
         slidesPerView: 3,
         spaceBetween: 20,
