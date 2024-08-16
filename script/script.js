@@ -1,11 +1,15 @@
 window.onload = function(){
-    let toggleBtn = document.querySelector('.togglebar');
-    let toggleIcon = document.querySelector('.togglebar i');
-    let drdw = document.querySelector('.toggle-dropdown');
-    toggleBtn.onclick = function(){
-        const isOpen = drdw.classList.toggle('open');
-        toggleIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-    };
+  const toggleBTN = document.querySelector('.toggle_btn')
+  const toggleBtnIcon = document.querySelector('.toggle_btn i')
+  const dropDownMenu = document.querySelector('.dropdown_menu')
+  
+  toggleBTN.onclick = function (){
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+      toggleBtnIcon.classList = isOpen
+      ? 'fa-solid fa-xmark'
+      : 'fa-solid fa-bars'
+  };
     //Header Slider
     var slideImg = document.getElementById('bannerImg');
     var img = new Array(

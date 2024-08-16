@@ -21,69 +21,82 @@ body{
     display: flex;
     justify-content: center;
 }
-li {
+li{
     list-style: none;
 }
 a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    display: block;
-    padding: 10px;
+    color: #212529;
 }
-.navbar a:hover{
-    color: rgb(212, 255, 0);
+nav ul li a{
+    color: #212529;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    margin: 0 20px;
+    border-radius: 3px;
 }
-.navbar .links{
-    display: flex;
-    gap: 2rem;
+.navbar .logo img{
+    position: absolute;
+    width: 150px;
+    top: 5px;
+    left: 30px;
 }
-.navbar .togglebar{
-    color: rgb(255, 255, 255);
-    font-size: 1.5rem;
-    display: none;
-    cursor: pointer;
+.links a:hover{
+    background: lightgray;
+    transition: .5s;
+}
+div.navbar{
+    position: relative;
 }
 .navbar{
     width: 100%;
-    height: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: 85px;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.navbar .logo a{
+.navbar .links{
+    display: flex;
+}
+.navbar .toggle_btn{
+    color: #212529;
     font-size: 1.5rem;
-    font-weight: bold;
+    cursor: pointer;
+    display: none;
 }
 /* DROPDOWN MENU */
-.toggle-dropdown{
+.dropdown_menu{
+    display: none;
     position: absolute;
     right: 2rem;
     top: 60px;
+    height: 0;
     width: 300px;
-    height: 0px;
-    background-color: rgba(84, 85, 84, 0.5);
+    background: lightgray;
+    backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
-    transition: height 0.2s;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.toggle-dropdown > ul > li{
-    padding: 0.5rem;
+.dropdown_menu.open{
+    height: auto;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.toggle-dropdown.open{
-    height: 240px;
-}
-.togglebar.active {
-    color: rgb(212, 255, 0);
-}
+
 /* BANNER HEADER */
 .banner{
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    background-image: url("../images/banner1.jpg");
+    background-size: cover;
+    background-position: center;
     position: relative;
     overflow: hidden;
 }
@@ -171,6 +184,32 @@ div.hr-line{
     margin: 5px 0px;
     background: var(--line);
 }
+.booking-container{
+    max-width: 1120px;
+    margin: 0 auto;
+}
+.booking-content{
+    padding: 20px 10px;
+    margin: 0 40px;
+    justify-content: center;
+    overflow: hidden;
+    gap: 10px;
+}
+.booking-img{
+    margin: 0;
+    padding: 0;
+}
+.booking-img img{
+    width: 100%;
+}
+div.booking-infor{
+    /* box-shadow: 0px 0px 5px rgba(27, 27, 27, 0.892); */
+    padding: 20px 0px;
+}
+div.booking-infor span{
+    display: block;
+    color: #212529;
+}
 .feedback-upper-container{
     width: 100%;
 }
@@ -195,11 +234,7 @@ div.hr-line{
     background: var(--line);
 }
 /* FEEDBACK REVIEw */
-/* div.swipers{
-    background-color: aqua;
-} */
 .feedback-one{
-    /* background-color: green; */
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(165, 165, 165, 0.678);
     padding: 10px 0px;
@@ -207,13 +242,11 @@ div.hr-line{
 .feedback-content{
     padding: 20px 10px;
     margin: 0 40px;
-    /* background-color: red; */
     overflow: hidden;
 }
 .feedback-container{
     max-width: 1120px;
     width: 70%;
-    /* background-color: #e2ff41; */
 }
 .swiperbutt{
     width: 50px !important;
@@ -257,12 +290,14 @@ div.text{
         transform: translateX( calc(-250px * 6));
     }
 }
-
+.slider{
+    overflow: hidden;
+}
 .slider .slide-track {
-    animation: scroll 30s cubic-bezier(.2,.54,.89,.46) infinite;
     display: flex;
     background-color: white;
     width: calc(250px * 12);
+    animation: scroll 30s cubic-bezier(.2,.54,.89,.46) infinite;
 }
 
 .slider .slide-img{
@@ -317,6 +352,13 @@ footer{
     text-decoration: none;
     padding: 10px;
     margin: 10px;
+    color: white;
+    display: block;
+}
+.left-infor a, .right-infor a{
+    padding: 0 10px;
+    position: relative;
+    color: white;
 }
 .footer-icon a i{
     font-size: 1.5em;
@@ -337,16 +379,6 @@ hr{
 }
 /* RESPONSIVE DESIGN */
 @media (max-width:768px){
-    .navbar .links{
-        display: none;
-    }
-    .navbar .togglebar{
-        display: block;
-        padding: 10px;
-    }
-    .toggle-dropdown{
-        display: block;
-    }
     .footer-icon a i{
         font-size: 1.05em;
     }
@@ -355,5 +387,22 @@ hr{
     }
     .left-infor, .right-infor{
         justify-content: center;
+    }
+}
+@media (max-width: 1188px){
+    .navbar .links{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+}
+@media (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
     }
 }
