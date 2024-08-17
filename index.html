@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home stay name</title>
+    <link rel="shortcut icon" href="images/logo_homestay.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
@@ -19,7 +21,7 @@
             <div class="overlay">
                 <div class="navbar">
                     <nav class="navbar">
-                        <div class="logo"><a href="#"><img src="https://studenthomestay.co.uk/wp-content/uploads/2023/04/Student-homestay-Ltd-Logo.png"></a></div>
+                        <div class="logo"><a href="#"><img src="images/logo_homestay.png"></a></div>
                         <ul class="links">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">About Us</a></li>
@@ -58,13 +60,34 @@
             <span class="a tit3">Đi du lịch không chỉ mở rộng tầm nhìn của bạn, mà còn mở rộng tâm hồn của bạn.</span>
             <div class="hr-line"></div><span class="b" >Ellie Morgan</span>
         </div>
+    <section class="introduce flex">
+        <div class="intro-left">
+            <h2>Như Tổ Ấm Của Bạn</h2>
+            <h3>Enjoy Your Stay</h3>
+            <div class="intro-content">
+            <p>Đến với Sweet Home Homestay, bạn sẽ có những giây phút nghỉ ngơi thoải mái, được tham gia các hoạt động vui chơi giải trí, trút bỏ hết những ưu phiền và bộn bề của cuộc sống. Homestay sang trọng với đầy đủ các hạng mục tiện nghi gồm nhiều loại phòng và bungalow hiện đại kết hợp phong cách truyền thống, hệ thống bể bơi bể sục đa năng cùng hệ thống nhà hàng, khu vui chơi, …</p>
+            </div>
+            <a href="">Đọc thêm</a>
+        </div>
+        <div class="intro-right">
+            <div class="intro-pic">
+                <img src="https://amihotel.webhotel.vn/files/images/images/aboutus01.jpg" alt="intro">
+                <img src="https://amihotel.webhotel.vn/files/images/images/banner3.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="service">
+        <div class="service-left">
+            
+        </div>
+    </section>
     <section class="booking">
         <div class="feedback-upper">
             <span class="tit2">Các Hạng Phòng</span>
         </div>
-        <div class="booking-container">
-            <div class="booking-content flex">
-                <div class="booking-infor">
+        <div class="booking-container" id="list-container">
+            <div class="booking-content flex" id="list">
+                <div class="booking-infor" id="item">
                     <div class="booking-img"><img src="images/booking1.jpg" alt="room"></div>
                     <span>Phòng đôi Blue Ocean</span>
                     <span><i class="fa fa-wallet"></i> 1.000.000 VND/Đêm</span>
@@ -85,6 +108,10 @@
                     <span><i class="fa fa-wallet"></i> 1.200.000 VND/Đêm</span>
                 </div>
             </div>
+        </div>
+        <div class="direction">
+            <button id="prev"><</button>
+            <button id="next">></button>
         </div>
     </section>
     </main>
