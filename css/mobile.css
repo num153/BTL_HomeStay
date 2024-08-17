@@ -1,0 +1,34 @@
+@media (max-width: 1024px){
+    .navbar .links{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+    div.booking-infor{
+        width: calc(50vw - 20px);
+    }
+}
+@media (max-width:768px){
+    .footer-icon a i{
+        font-size: 1.05em;
+    }
+    .footer-infor{
+        flex-direction: column;
+    }
+    .left-infor, .right-infor{
+        justify-content: center;
+    }
+}
+@media (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+    div.booking-infor{
+        width: calc(100vw - 20px);
+    }
+}

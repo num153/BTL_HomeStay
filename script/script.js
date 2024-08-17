@@ -26,6 +26,15 @@ window.onload = function(){
       i++;
       setTimeout(slider(),3000);
     }
+    //Booking Slider
+    document.getElementById('next').onclick = function(){
+      const widthItem = document.getElementById('item').offsetWidth + 10;
+      document.getElementById('list-container').scrollLeft += widthItem;
+    }
+    document.getElementById('prev').onclick = function(){
+      const widthItem = document.getElementById('item').offsetWidth + 10;
+      document.getElementById('list-container').scrollLeft -= widthItem;
+    }
     // Feedback Swiper
     var swiper = new Swiper(".feedback-content", {
         slidesPerView: 3,
