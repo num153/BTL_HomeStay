@@ -26,6 +26,13 @@ window.onload = function(){
       i++;
       setTimeout(slider(),3000);
     }
+    //FAQs toggle
+    const fag = document.querySelectorAll('.faq-one');
+    for(let f of fag){
+      f.addEventListener("click",function(){
+        f.classList.toggle("active");
+      });
+    }
     //Booking Slider
     document.getElementById('next').onclick = function(){
       const widthItem = document.getElementById('item').offsetWidth + 10;
