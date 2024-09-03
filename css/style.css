@@ -5,11 +5,15 @@
     --top-m: 30px;
     --font-quote: 20px;
 }
+::-webkit-scrollbar{
+    display: none;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 body{
     background-color: rgb(29, 26, 8) ;
@@ -152,6 +156,41 @@ div.navbar{
     object-fit: cover;
     display: block;
 }
+/* BACK TO TOP */
+#back-to-top{
+    position: fixed;
+    display: block;
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+    bottom: 45px;
+    right: 45px;
+    cursor: pointer;
+    background-color: #ac7c67;
+    border-radius: 50%;
+    transition: 0.4s;
+    z-index: 999;
+    box-shadow: 0px 5px 5px rgba(15, 15, 15, 0.64);
+}
+#back-to-top i{
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+#back-to-top.show{
+    opacity: 0.6;
+    transition: all 0.3s linear;
+    animation: fadeInUp;
+    animation-duration: 0.6s;
+
+}
+#back-to-top.show:hover {
+    opacity: 1;
+    font-size: 20px;
+}
 /* FAQs */
 section.faq-container{
     padding: 0 20px;
@@ -235,7 +274,24 @@ section.faq-container{
     text-align: center;
     color: #fff;
 }
-
+.banner-content a{
+    margin-top: 1.5rem;
+    margin-right: 30px;
+    display: inline-block;
+    padding: 12px 30px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 21px;
+    border: 2px solid white;
+    font-weight: bold;
+ 
+}
+.banner-content a:hover{
+    background-color: white;
+    color: black;
+    transition: all 0.3s linear;
+}
 .banner-content h3, .banner-content h1 {
     margin: 0;
     padding: 0;
@@ -327,6 +383,10 @@ div.booking-infor span{
     color: #212529;
     font-size: 16px;
     margin-left: 10px;
+}
+.booking-infor:hover{
+    transform: translateY(-15px);
+    transition: 0.5s ease-in all;
 }
 /* LUNDEV */
 #list{
