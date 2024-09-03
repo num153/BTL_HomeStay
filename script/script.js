@@ -26,6 +26,15 @@ window.onload = function(){
       i++;
       setTimeout(slider(),3000);
     }
+    //Back to top
+    const toTop=document.getElementById('back-to-top');
+    window.addEventListener("scroll", function (){
+      if(window.pageYOffset > 100){
+        toTop.classList.add("show");
+      }else{
+        toTop.classList.remove("show");
+      }
+    })
     //FAQs toggle
     const fag = document.querySelectorAll('.faq-one');
     for(let f of fag){

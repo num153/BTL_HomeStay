@@ -22,6 +22,9 @@
     .left-infor, .right-infor{
         justify-content: center;
     }
+    .faq-img{
+        display: none;
+    }
 }
 @media (max-width: 576px){
     .dropdown_menu{
@@ -30,5 +33,18 @@
     }
     div.booking-infor{
         width: calc(100vw - 20px);
+    }
+    .introduce{
+        flex-wrap: wrap;
+    }
+    .intro-left{
+        width: 100%;
+    }
+    .intro-right{
+        width: 100%;
+    }
+    .intro-left a{
+        display: inline-block;
+        margin-bottom: 20px;
     }
 }
