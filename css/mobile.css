@@ -9,7 +9,7 @@
         display: block;
     }
     div.booking-infor{
-        width: calc(50vw - 20px);
+        width: calc(50vw - 10px);
     }
 }
 @media (max-width:768px){
@@ -32,7 +32,7 @@
         width: unset;
     }
     div.booking-infor{
-        width: calc(100vw - 20px);
+        width: calc(100vw - 10px);
     }
     .introduce{
         flex-wrap: wrap;

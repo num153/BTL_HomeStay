@@ -260,21 +260,49 @@ section.faq-container{
     transform: rotate(180deg);
 }
 /* BANNER HEADER */
-.banner{
-    width: 100%;
+.banner-slider .slider{
+    width: 100vw;
     height: 100vh;
     position: relative;
+    margin: auto;
+    overflow: hidden;
 }
-.banner-slider{
-    width: 100%;
-    height: 100%;
+.banner-slider .slider .list{
     position: absolute;
-    top:0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: max-content;
+    transition: all 1s;
 }
-.banner-slider img{
-    width: 100%;
+.list img{
+    width: 100vw;
     height: 100%;
     object-fit: cover;
+}
+.dots{
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: white;
+    transition: 1s;
+
+}
+.dots li.on{
+    width: 30px; 
 }
 .overlay {
     width: 100%;
@@ -288,9 +316,14 @@ section.faq-container{
     text-align: center;
     color: #fff;
 }
+.banner-option{
+    width: 60%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
 .banner-content a{
-    margin-top: 1.5rem;
-    margin-right: 30px;
+    margin-top: 1.5rem !important;
+    margin: 0px 20px 0px;
     display: inline-block;
     padding: 12px 30px;
     color: white;
@@ -317,7 +350,7 @@ section.faq-container{
     padding: 10px;
     display: block;
     text-align: center;
-    margin-top: 36px;
+    margin-top: 2.4rem;
 }
 .tit3{
     color: #45474B;
@@ -325,6 +358,9 @@ section.faq-container{
     padding: 20px 0px 15px;
     display: block;
     text-align: center;
+}
+.slider-footer .tit3{
+    margin-top: 1.4rem;
 }
 .quote{
     text-align: center;
@@ -382,15 +418,19 @@ div.hr-line-page{
 .booking-img{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 .booking-img img{
     width: 100%;
+    transition: transform 0.5s ease;
 }
 div.booking-infor{
-    width: 300px;
+    width: 400px; /* uiu*/
     height: auto;
     padding: 20px 10px 0px;
     margin: 5px;
+    transition: transform 0.5s;
+    position: relative;
 }
 div.booking-infor span{
     display: block;
@@ -398,9 +438,22 @@ div.booking-infor span{
     font-size: 16px;
     margin-left: 10px;
 }
-.booking-infor:hover{
-    transform: translateY(-15px);
-    transition: 0.5s ease-in all;
+.booking-infor::after{
+    content: "Chi tiết";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.booking-infor:hover::after{
+    opacity: 1;
+}
+.booking-infor:hover img{
+    transform: scale(1.2);
+    filter: grayscale(0.7);
 }
 /* LUNDEV */
 #list{
@@ -408,7 +461,7 @@ div.booking-infor span{
     width: max-content;
 }
 #list-container{
-    width: 930px; /*width cua moi item bao gom ca margin*/
+    width: calc(410px*3); /*width cua moi item bao gom ca margin*/
     max-width: 100%;
     overflow: auto;
     margin: 20px auto;
@@ -515,19 +568,28 @@ div.text{
         transform: translateX( calc(-250px * 6));
     }
 }
-.slider{
+.slider-footer{
     overflow: hidden;
+    mask-image: linear-gradient(to right,transparent,black 5% 90%,transparent);
 }
-.slider .slide-track {
+.slider-footer .slide-track {
     display: flex;
     background-color: white;
     width: calc(250px * 12);
     animation: scroll 30s cubic-bezier(.2,.54,.89,.46) infinite;
 }
 
-.slider .slide-img{
+.slider-footer .slide-img{
     width: 250px;
     height: 100px;
+    transition: transform 0.3s ease;
+}
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+.slider-footer .slide-img:hover {
+    transform: scale(0.9);
 }
 /* FOOTER */
 footer{
