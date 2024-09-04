@@ -297,8 +297,6 @@ section.faq-container{
     top: 0;
 }
 .banner-content {
-    width: 60%;
-    margin: 15em auto 0px;
     text-align: center;
     color: #fff;
 }
@@ -319,6 +317,13 @@ section.faq-container{
     border: 2px solid white;
     font-weight: bold;
  
+}
+.banner-overall{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .banner-content a:hover{
     background-color: white;
@@ -418,6 +423,9 @@ div.booking-infor{
     transition: transform 0.5s;
     position: relative;
 }
+div.rating{
+    color: gold;
+}
 div.booking-infor span{
     display: block;
     color: #212529;
@@ -425,7 +433,9 @@ div.booking-infor span{
     margin-left: 10px;
 }
 .booking-infor::after{
-    content: "Chi tiết";
+    content: "Chi Tiết";
+    font-size: 20px;
+    text-decoration: underline;
     position: absolute;
     top: 50%;
     left: 50%;
