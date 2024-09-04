@@ -12,7 +12,6 @@ toggleBTN.onclick = function (){
 //add to cart
 const btn = document.querySelectorAll("button");
 
-// Select the right-item div and the empty message
 const rightItem = document.querySelector(".right-item");
 const emptyMessage = document.getElementById("empty-message");
 const form = document.querySelector("form");
