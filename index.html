@@ -16,7 +16,24 @@
     <header>
         <div class="banner">
             <div class="banner-slider">
-                <img src="images/banner1.jpg" alt="banner" >
+                <div class="slider">
+                    <div class="list">
+                        <div class="item">
+                            <img src="images/banner1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/banner2.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/banner3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <ul class="dots">
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
             <div class="overlay">
                 <div class="navbar">
@@ -25,7 +42,7 @@
                         <ul class="links">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="index-about_us.html">About Us</a></li>
-                            <li><a href="#">Rooms</a></li>
+                            <li><a href="index.html#room">Rooms</a></li>
                             
                             <li><a href="booking.html">Booking</a></li>
 
@@ -38,7 +55,7 @@
                     <div class="dropdown_menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index-about_us.html">About Us</a></li>
-                        <li><a href="#">Rooms</a></li>
+                        <li><a href="index.html#room">Rooms</a></li>
                         
                         <li><a href="booking.html">Booking</a></li>
                         <li><a href="index-contact.html">Contact</a></li>
@@ -47,8 +64,10 @@
                 <div class="banner-content">
                     <h3>Best choice for you</h3>
                     <h1>Perfect Home Stay Holiday</h1>
-                    <a href="index-about_us.html">about us</a>
-                    <a href="booking.html">booking now</a>
+                    <div class="banner-option">
+                        <a href="index-about_us.html">about us</a>
+                        <a href="booking.html">booking now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,7 +144,7 @@
 
     <section class="booking">
         <div class="feedback-upper">
-            <span class="tit2">Các Hạng Phòng</span>
+            <span id ="room" class="tit2">Các Hạng Phòng</span>
         </div>
         <div class="booking-container" id="list-container">
             <div class="booking-content flex" id="list">
