@@ -231,6 +231,7 @@ div.room{
 .booking-icon{
     margin: 20px 0px 10px;
 }
+
 .room-img-container img{
     width: 100%;
 }
@@ -273,6 +274,18 @@ div.room{
 }
 .room-info-item{
     margin-top: 10px;
+    position: relative;
+}
+.remove-item{
+    padding: 0px 10px 0px;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+}
+.remove-item:active{
+    color: red;
 }
 /* RESPONSIVE */
 @media (max-width: 1024px){

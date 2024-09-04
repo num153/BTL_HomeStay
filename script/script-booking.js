@@ -37,6 +37,7 @@ btn.forEach(function(button) {
             <h3>${roomName}</h3>
             <p>Số lượng: ${roomNumber}</p>
             <p>Giá tiền: ${Cost.toLocaleString()}</p>
+            <button class="remove-item">x</button>
         `;
 
         if (rightItem.style.display === "none") {
@@ -44,6 +45,14 @@ btn.forEach(function(button) {
             emptyMessage.style.display = "none";
         }
         rightItem.appendChild(roomInfo);
+        roomInfo.querySelector(".remove-item").addEventListener("click", function() {
+            rightItem.removeChild(roomInfo);
+
+            if (rightItem.children.length === 0) {
+                rightItem.style.display = "none";
+                emptyMessage.style.display = "block";
+            }
+        });
     });
 });
 
