@@ -19,10 +19,12 @@ window.onload = function(){
         active = (active + 1) % item.length; // k vuot qua 3
         reloadSlider();
     }
-    
+    // console.log(item[0].offsetLeft); la bang 0
     let refresh = setInterval(autoSlide, 3000);
     function reloadSlider(){
-        let checkLeft=item[active].offsetLeft;
+      //item1 1006
+        let checkLeft=item[active].offsetLeft; //khoang cach left cua list den mep left cua item
+      //dich chuyen ve trai mot khoang bang checkLeft
         list.style.left = -checkLeft + 'px';
         let lastDot = document.querySelector(" .dots li.on");
         lastDot.classList.remove("on");
@@ -39,7 +41,7 @@ window.onload = function(){
     //Back to top
     const toTop=document.getElementById('back-to-top');
     window.addEventListener("scroll", function (){
-      if(window.pageYOffset > 100){
+      if(window.scrollY > 100){
         toTop.classList.add("show");
       }else{
         toTop.classList.remove("show");
@@ -61,25 +63,4 @@ window.onload = function(){
       const widthItem = document.getElementById('item').offsetWidth + 10;
       document.getElementById('list-container').scrollLeft -= widthItem;
     }
-    // Feedback Swiper
-    var swiper = new Swiper(".feedback-content", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        freeMode: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints:{
-          0:{
-            slidesPerView: 1,
-          },
-          768:{
-            slidesPerView: 2,
-          },
-          950:{
-            slidesPerView: 3,
-          },
-        }
-      });
 }
