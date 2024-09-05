@@ -20,14 +20,13 @@ rightItem.style.display = "none";
 
 btn.forEach(function(button) {
     button.addEventListener("click", function(event) {
-        const btnItem = event.target;
+        const btnItem = event.target; //target lay moi btn nay
         const product = btnItem.parentElement.parentElement;
 
         const roomName = product.querySelector(".room-infor h3").innerText;
-        const roomPriceText = product.querySelector(".room-price .money").innerText;
+        // const roomPriceText = product.querySelector(".room-price .money");
         const roomNumber = product.querySelector("select[name='numbers']").value;
-
-        const roomPrice = parseFloat(roomPriceText.replace(/,/g, ''));
+        const roomPrice = parseFloat(product.querySelector(".room-price .money").dataset.value);
 
         const Cost = roomPrice * roomNumber;
 
